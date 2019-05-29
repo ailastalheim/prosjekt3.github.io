@@ -1,0 +1,194 @@
+#banner{
+    background-image: url(bilder/clouds_title4.jpg);
+    height: 100px;
+}
+
+#currentpage{
+    color: darkslategray;
+    text-shadow: 0px 0px 15px black;
+}
+nav>a:hover{
+    text-shadow: 1px 1px 10px black;
+    color: black;
+    transition: 0.5s;
+}
+body{
+    background-image: url(bilder/background_tile2.jpg);
+    font-family: Verdana;
+}
+nav{
+    background-color: #b3bcf8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    margin: 10px;
+}
+nav a{
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+    text-shadow: 0px 0px 10px black;
+    text-decoration: none;
+}
+nav .hjem{
+    background-color: #8da5ed;
+    font-size: 32px;
+    padding: 10px;
+}
+@media(max-width:1130px){
+    main{
+        padding-top: 10px;
+    }
+    header>nav{
+        flex-direction: column;
+        justify-content: space-around 1;
+        padding-bottom: 150px;
+    }
+    header>nav>a{
+        margin-bottom: 10px;
+    }
+    main>h1{
+        padding-top: 90px;
+    }
+    img{
+        display: flex;
+        justify-content: space-around;
+    }
+    nav .hjem{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+@media(min-width:1300px){
+    header>nav{
+        flex-direction: row;
+        justify-content: space-between;
+    } 
+}
+header>div>h1{
+    color: azure;
+    text-shadow: 0px 0px 18px darkslategrey;
+    margin: 2px;
+    padding: 20px;
+    text-align: center;
+}
+header>div>h1:hover{
+    transition-duration: 1s;
+    transition-delay: 0;
+    transition-timing-function: ease-in, ease-out;
+    transform: scale(1.1);
+    text-shadow: 0px 0px 10px gray;
+}
+img{
+    width: 500px;
+}
+main{
+    max-width: 970px;
+    margin: auto;
+    display: grid;
+    grid-auto-columns: repeat(12,1fr);
+    grid-gap: 10px;
+}
+main h1, main h2, main h3, main p, main a{
+    padding: 10px;
+}
+main a, main div{
+    background-color: #b3bcf8;
+    color: #333;
+    text-decoration: none;
+}
+main a:hover{
+    text-shadow: 0px 0px 10px white;
+    transition: 1s;
+}
+a{
+    color: black;
+    text-shadow: 0px 0px 10px lightgray;
+}
+figcaption, figcaption>a{
+    font-size: 12px;
+    padding: 10px;
+    color: dimgray;
+}
+main img, main video{
+    width: 100%;
+}
+.kol-1{grid-column: span 1;}
+
+#animasjon{
+    width: 100px;
+    transition: 1s;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+#animasjon:hover{
+    transform: rotate(180deg);
+}
+#skjema{
+    margin-top: 50px;
+}
+#txtMeldinger{
+    background-color: #b3bcf8;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    min-height: 300px; 
+    padding: 10px;
+    margin-top: 10px;
+}
+#forsvar{
+    background-image: url(bilder/armycomputer.jpg)
+}
+#lege{
+    background-image: url(bilder/surgeons.png)
+}
+#bank{
+    background-image: url(bilder/bank.jpg)
+}
+
+#bilde{
+    margin: 10px auto;
+    display: flex;
+    width: 970px;
+    height: 320px;
+}
+#bilde>div{
+    flex: 1;
+    background-color: #b3bcf8;
+    border: 4px solid #b3bcf8;
+    opacity: 0.6;
+    background-position: center center;
+    background-size: cover;
+    transition: 0.5s;
+}
+#bilde>div:hover{
+    flex: 4;
+    transform: scale(1.2);
+    opacity: 1;
+    z-index: 1;
+}
+@keyframes coin{
+        from{
+            background-position: 0 0;
+}
+        to{
+            background-position: 1000px 0;
+}
+    }
+.run{
+    width: 100px;
+    height: 100px;
+    background-image: url(bilder/coin_animation.png);
+    animation-name: coin;
+    animation-duration: 1s;
+    animation-timing-function: steps(10);
+    animation-iteration-count: infinite;
+    margin: auto;
+}
+a>img,div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

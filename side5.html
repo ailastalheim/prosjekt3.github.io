@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Kapittel 3</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="bilder/bokpng.png">
+    </head>
+    <body>
+        <header>
+            <div id="banner"></div>
+                <nav>
+                    <a href="index.html" class="hjem">Hjem</a>
+                    <a href="side1.html">6.1 - Risikoen for angrep aukar</a>
+                    <a href="side2.html">6.2 - Informasjonssikkerheit</a>
+                    <a href="side3.html">6.3 - Sikkerheit og personvern</a>
+                    <a href="side4.html">6.4 - Regelverk</a>
+                    <a id="currentpage" href="side5.html">Chat</a>
+                </nav>
+            <div>
+                <h1>Chat</h1>
+            </div>
+            
+        </header>
+               <form id="skjema">
+        <input type="text" id="inpAvsender" required placeholder="Kven er du?">
+        <input type="text" id="inpMening" required placeholder="Kva seier du?">
+        <button type="submit" class="button">OK</button>
+    </form>
+    
+    <article id="txtMeldinger"></article>
+    
+
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBEWl7GtwCIVJwQMXGueHjoM0YZndkM8Bo",
+    authDomain: "superchat-f47b7.firebaseapp.com",
+    databaseURL: "https://superchat-f47b7.firebaseio.com",
+    projectId: "superchat-f47b7",
+    storageBucket: "superchat-f47b7.appspot.com",
+    messagingSenderId: "67475972227"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+let database = firebase.database();
+let meldinger = database.ref("meldinger");
+let skjema = document.getElementById("skjema");
+let inpAvsender = document.getElementById("inpAvsender");
+let inpMening = document.getElementById("inpMening");
+let txtMeldinger = document.getElementById("txtMeldinger");
+function visMelding(snapshot) {
+let melding = snapshot.val();
+let meldingTekst = `<p>
+<b>${melding.avsender}: </b>
+<i>${melding.tekst}</i>
+</p>`;
+txtMeldinger.innerHTML = txtMeldinger.innerHTML + meldingTekst;
+}
+    
+function regNyMelding(evt) {
+evt.preventDefault();
+let nyMelding = {
+avsender: inpAvsender.value,
+tekst: inpMening.value
+};
+    
+meldinger.push(nyMelding);
+inpMening.value = "";
+}
+    
+meldinger.on("child_added", visMelding);
+skjema.onsubmit = regNyMelding;
+</script>
+<br>
+<a href="side5.html">
+    <img id="animasjon" src="bilder/flower.png" title="Tilbake til toppen">
+</a>
+  
+    </body>
+</html>
