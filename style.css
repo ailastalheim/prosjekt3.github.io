@@ -17,7 +17,7 @@ body{
     font-family: Verdana;
 }
 nav{
-    background-color: #9ac8e9;
+    background-color: #a1cceb;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,7 +33,7 @@ nav a{
     text-decoration: none;
 }
 nav .hjem{
-    background-color: #9ac8e9;
+    background-color: #a1cceb;
     font-size: 32px;
     padding: 10px;
 }
@@ -95,7 +95,7 @@ main h1, main h2, main h3, main p, main a{
     padding: 10px;
 }
 main a, main div{
-    background-color: #9ac8e9;
+    background-color: #a1cceb;
     color: #333;
     text-decoration: none;
 }
@@ -131,7 +131,7 @@ main img, main video{
     margin-top: 50px;
 }
 #txtMeldinger{
-    background-color: #9ac8e9;
+    background-color: #a1cceb;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -157,8 +157,8 @@ main img, main video{
 }
 #bilde>div{
     flex: 1;
-    background-color: #9ac8e9;
-    border: 4px solid #9ac8e9;
+    background-color: #a1cceb;
+    border: 4px solid #a1cceb;
     opacity: 0.6;
     background-position: center center;
     background-size: cover;
